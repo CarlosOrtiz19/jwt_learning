@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.equipe1</groupId>
-	<artifactId>420-565</artifactId>
+	<artifactId>EQ1-420-565</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>420-565</name>
+	<name>EQ1-420-565</name>
 	<description>Projet stage etudiant</description>
 
 	<properties>
