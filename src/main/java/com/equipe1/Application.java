@@ -1,5 +1,6 @@
 package com.equipe1;
 
+
 import com.equipe1.service.InsertDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
