@@ -1,2 +1,15 @@
-package com.equipe1.model;public class JwtResponse {
+package com.equipe1.model;
+
+import java.io.Serializable;
+
+public class JwtResponse implements Serializable {
+    private final String jwtToken;
+
+    public JwtResponse(String jwtToken) {
+        this.jwtToken = jwtToken;
+    }
+
+    public String getToken(){
+        return this.jwtToken;
+    }
 }

@@ -8,6 +8,7 @@
 		<version>2.3.3.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.equipe1</groupId>
 	<artifactId>EQ1-420-565</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -25,12 +26,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-
 			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-hateoas</artifactId>
 		</dependency>
 
 		<dependency>
