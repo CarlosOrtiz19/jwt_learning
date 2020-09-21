@@ -10,16 +10,12 @@ import javax.persistence.Id;
 @Entity
 @Data
 @NoArgsConstructor
-public class Etudiant {
+public class Gestionnaire {
 
     @Id
     @GeneratedValue()
     private Long id;
 
-<<<<<<< HEAD
-    private String nom;
-
-=======
     private String matricule;
 
     private String password;
@@ -28,20 +24,9 @@ public class Etudiant {
 
     private String prenom;
 
-    private String programme;
-
     private String email;
 
     private String telephone;
 
-    private String adresse;
-
-    private boolean statutStage;
-
-    //private Stage stage;
-
->>>>>>> origin/mergeTest
-    public Etudiant(String nom){
-        this.nom = nom;
-    }
+    private String noBureau;
 }
