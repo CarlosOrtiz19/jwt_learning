@@ -1,5 +1,6 @@
 package com.equipe1.Config;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,7 +26,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsService jwtUserDetailsService;
 
-    @Autowired
+    @Autowired(required=true)
     private JwtRequestFilter jwtRequestFilter;
 
     @Autowired
