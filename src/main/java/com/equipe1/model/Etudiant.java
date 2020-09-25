@@ -16,15 +16,11 @@ public class Etudiant {
     @GeneratedValue()
     private Long id;
 
-<<<<<<< HEAD
     private String nom;
 
-=======
     private String matricule;
 
     private String password;
-
-    private String nom;
 
     private String prenom;
 
@@ -40,7 +36,6 @@ public class Etudiant {
 
     //private Stage stage;
 
->>>>>>> origin/mergeTest
     public Etudiant(String nom){
         this.nom = nom;
     }
