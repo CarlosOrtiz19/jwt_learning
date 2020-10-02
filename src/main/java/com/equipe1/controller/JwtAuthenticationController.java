@@ -3,6 +3,7 @@ package com.equipe1.controller;
 import com.equipe1.Config.JwtTokeUtil;
 import com.equipe1.model.JwtRequest;
 import com.equipe1.model.JwtResponse;
+import com.equipe1.model.UserApp;
 import com.equipe1.service.JwtUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @CrossOrigin
 public class JwtAuthenticationController {
-
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -35,6 +35,12 @@ public class JwtAuthenticationController {
         final String token = jwtTokenUtil.generateToken(userDetails);
         return ResponseEntity.ok(new JwtResponse(token));
     }
+
+    @PostMapping("/register")
+    public ResponseEntity<?> saveUser(@RequestBody UserApp user) throws Exception {
+        return ResponseEntity.ok(userDetailsService.save(user));
+    }
+
 
     private void authenticate(String username, String password) throws Exception {
         try {

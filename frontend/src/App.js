@@ -2,24 +2,47 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
+import EtudiantRegister from "./components/EtudiantRegister";
+import ListStagesComponent from "./components/ListStageComponent";
+import CreateStageComponent from './components/CreateStageComponent';
+import EmployeurRegister from "./components/EmployeurRegister";
+import Login from "./components/Login";
+import { BrowserRouter as Router, Route, Switch, Link, NavLink } from 'react-router-dom';
+import Home from "./components/Home";
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <article id="article">
+        <div>
+          <Router>
+            <nav class="navbar navbar-dark bg-dark p-2 m-3">
+              <NavLink to="/">Home</NavLink>
+              <NavLink to="/empRegist">Inscrire un employé</NavLink>
+              <NavLink to="/create">Inscrire un étudiant</NavLink>
+              <NavLink to="/createStage">Créer un stage</NavLink>
+              <NavLink to="/Login">Login</NavLink>
+            </nav>
+            <div className="container">
+              <div className="container">
+                <Switch>
+                  <Route path="/" exact component={Home}></Route>
+                  <Route path="/stages" component={ListStagesComponent}></Route>
+                  <Route path="/createStage" component={CreateStageComponent}></Route>
+                  <Route path='/empRegist' component={EmployeurRegister} />
+                  <Route path='/create' component={EtudiantRegister} />
+                  <Route path='/login' component={Login} />
+                </Switch>
+              </div>
+            </div>
+          </Router>
+        </div>
+      </article>
+
     </div>
+
   );
 }
 

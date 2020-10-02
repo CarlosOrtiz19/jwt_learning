@@ -10,33 +10,17 @@ import javax.persistence.Id;
 @Entity
 @Data
 @NoArgsConstructor
-public class Etudiant {
-
-    @Id
-    @GeneratedValue()
-    private Long id;
-
-    private String nom;
-
-    private String matricule;
-
-    private String password;
-
-    private String prenom;
+public class Etudiant extends UserApp{
 
     private String programme;
 
-    private String email;
-
-    private String telephone;
-
     private String adresse;
 
-    private boolean statutStage;
+    private String statutStage;
 
     //private Stage stage;
 
     public Etudiant(String nom){
-        this.nom = nom;
+        nom = nom;
     }
 }
