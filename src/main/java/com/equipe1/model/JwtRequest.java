@@ -8,11 +8,11 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 public class JwtRequest implements Serializable {
-    private String username;
+    private String email;
     private String password;
 
     public JwtRequest(String username, String password) {
-        this.setUsername(username);
+        this.setEmail(username);
         this.setPassword(password);
     }
 

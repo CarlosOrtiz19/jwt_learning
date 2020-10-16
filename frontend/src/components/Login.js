@@ -1,39 +1,90 @@
 import React, { Component } from 'react';
+import User from '../model/User';
 import './../App.css';
 import './../css/Register.css';
+import axios from 'axios'
+import login from '../service/LoginService'
+import { withRouter } from 'react-router-dom';
 
+
+const AUTH_TOKEN = 'auth_token';
 
 export default class Login extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: ''};
+        this.state = {
+            email: ' ',
+            password: ' '
+
+        }
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+
     handleChange(event) {
-        this.setState({value: event.target.value});
+        this.setState({ [event.target.name]: event.target.value })
     }
 
     handleSubmit(event) {
-        event.preventDefault();
+    event.preventDefault();
+      this.login(this.state);
+
+   this.goHome();
     }
 
-    render(){
+    goHome(){
+        if(localStorage.getItem('token')){
+            this.props.history.push('/Home');
+        }
+    }
+
+    login() {
+         
+
+  
+     
+
+       /* fetch('http://localhost:8080/authenticate', {
+
+       /* fetch('http://localhost:8080/authenticate', {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer '
+            },
+            body: JSON.stringify(this.state)
+        }).then((response) => {
+            response.json().then((result) => {
+                console.log("result ", result);
+                console.log(response)
+                localStorage.setItem('login', JSON.stringify({
+                    login: true,
+                    token: result.token
+                }));
+
+            })
+        })*/
+    }
+
+
+    render() {
         return (
             <div className="formBox">
                 <h3>Login</h3>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label>
                         Email:
-                        <input type="email" name="email" />
+                        <input type="email" name="email" value={this.state.email} onChange={this.handleChange} />
                     </label>
                     <label>
                         Password:
-                        <input type="password" name="password" />
+                        <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
                     </label>
-                    <input type="submit" value="Login"/>
+                    <button type="sub"> send</button>
+
                 </form>
             </div>
         );

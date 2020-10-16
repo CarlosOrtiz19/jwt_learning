@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import Stage from '../model/Stage'
-import StageService from '../service/StageService';
-import { Formik, Field, Form, ErrorMessage, withFormik } from "formik";
-import Employeur from '../model/Employeur';
-import * as Yup from 'yup';
+import {  Field, Form, ErrorMessage, withFormik } from "formik";
 import '../css/Forms.css';
 import FieldEmptyValidate from './FieldEmptyValidate'
 
@@ -44,7 +41,7 @@ class CreateStageComponent extends Component {
 
 
   render() {
-    const { handleSubmit, isSubmitting, errors, isValid, values } = this.props;
+    const { handleSubmit, isSubmitting, isValid } = this.props;
 
     return (
       <div className="card p-3">
@@ -69,7 +66,7 @@ class CreateStageComponent extends Component {
             <div className="row">
               <div className="form-group col">
                 <label className="control-label">Date Début de Stage</label>
-                <Field type="date" name="dateDebut" className="form-control" className="form-control" />
+                <Field type="date" name="dateDebut" className="form-control"/>
                 <ErrorMessage name="dateDebut">{msg => <FieldEmptyValidate field={msg} />}</ErrorMessage>
               </div>
               <div className="form-group col">

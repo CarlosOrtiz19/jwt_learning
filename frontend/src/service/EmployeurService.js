@@ -26,7 +26,7 @@ class EmployeurService{
     }
 
     async post(employeur){
-        fetch(baseURL + "/createEmploye",
+        fetch("http://localhost:8080/register",
             {method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
