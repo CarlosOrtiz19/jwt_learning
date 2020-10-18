@@ -8,7 +8,7 @@ const STAGES_URL_POST = "http://localhost:8080/createStage";
 
 class StageService{
 
-    //axiom
+    //axios
     getStages(){
         return axios.get(STAGES_URL, header);
     }
