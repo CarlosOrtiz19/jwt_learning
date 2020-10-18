@@ -9,6 +9,7 @@ let redirectStr = "";
 export default class EmployeurRegister extends Component {
     constructor(props) {
         super(props);
+       // let employeur = new Employeur()
         this.state = new Employeur();
 
         this.handleChange = this.handleChange.bind(this);
@@ -20,17 +21,13 @@ export default class EmployeurRegister extends Component {
         console.log(redirectStr);
     }
 
-    async handleSubmit(event) {
+    handleSubmit(event) {
         event.preventDefault();
-       
-             await EmployeurService.post(this.state);
-          
+        EmployeurService.post(this.state);
     }
 
     render(){
-        if(redirectStr == "HOME"){
-            return <Redirect to={"/"}/>
-        } else {
+      
             return (
                 <div className="formBox">
                     <h3>Register</h3>
@@ -66,6 +63,6 @@ export default class EmployeurRegister extends Component {
                     </form>
                 </div>
             );
-        }
+        
     }
 }

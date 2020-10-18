@@ -1,18 +1,20 @@
 import axios from 'axios'
+import {header} from '../service/headers'
 
 const STAGES_URL = "http://localhost:8080/stages";
 const STAGES_URL_POST = "http://localhost:8080/createStage";
+
 
 
 class StageService{
 
     //axiom
     getStages(){
-        return axios.get(STAGES_URL);
+        return axios.get(STAGES_URL, header);
     }
 
     createStage(stage){
-        return axios.post(STAGES_URL_POST,stage)
+        return axios.post(STAGES_URL_POST, header,stage)
     }
 
     //fetch

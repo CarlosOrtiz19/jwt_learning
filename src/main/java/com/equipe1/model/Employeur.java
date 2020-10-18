@@ -1,13 +1,17 @@
 package com.equipe1.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
-@Entity
 @NoArgsConstructor
+@AllArgsConstructor
+@Entity
 public class Employeur extends UserApp{
 
     private String adresse;

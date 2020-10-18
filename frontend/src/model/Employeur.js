@@ -1,7 +1,12 @@
 export default class Employeur {
-    id;
-    email = "";
-    nom = "";
-    telephone = "";
-    adresse = "";
+    id=" ";
+    nom=" ";
+    prenom=" ";
+    username="test";
+    email=" ";
+    password=" ";
+    matricule=" ";
+    telephone=" ";
+    discriminant="company";
+   // adresse =" ";
 }

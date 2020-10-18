@@ -3,7 +3,7 @@ import User from '../model/User';
 import './../App.css';
 import './../css/Register.css';
 import axios from 'axios'
-import login from '../service/LoginService'
+import LoginService from '../service/LoginService'
 import { withRouter } from 'react-router-dom';
 
 
@@ -29,14 +29,23 @@ export default class Login extends Component {
 
     handleSubmit(event) {
     event.preventDefault();
-      this.login(this.state);
+        LoginService.login(this.state).then(()=>{ 
+            this.props.history.push('/stages');
+            window.location.reload();
+        
+        
+        })
 
-   this.goHome();
+    /*axios.post( 'http://localhost:8080/authenticate',this.state)
+        .then((response) => {    
+          localStorage.removeItem( "user" )       
+          localStorage.setItem( "user", response.data)}).then(this.goHome());  */
+
     }
 
     goHome(){
-        if(localStorage.getItem('token')){
-            this.props.history.push('/Home');
+        if(localStorage.getItem('user')){
+            this.props.history.push('/stages');
         }
     }
 

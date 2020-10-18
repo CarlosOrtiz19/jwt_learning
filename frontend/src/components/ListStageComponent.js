@@ -6,7 +6,6 @@ export default class ListStagesComponent extends Component {
     constructor(props) {
         super(props);
         this.state = { stage: [], };
-
         this.addStage = this.addStage.bind(this);
     }
 
