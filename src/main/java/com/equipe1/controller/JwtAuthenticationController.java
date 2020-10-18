@@ -45,12 +45,14 @@ public class JwtAuthenticationController {
 
        UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
 
+        String token = jwtTokenUtil.generateToken(authentication);
+
         List<String> roles = userDetails.getAuthorities().stream()
                 .map(item -> item.getAuthority())
                 .collect(Collectors.toList());
 
 
-        final String token = jwtTokenUtil.generateToken(userDetails);
+
 
         return ResponseEntity.ok(new JwtResponse(token,
                 userDetails.getId(),

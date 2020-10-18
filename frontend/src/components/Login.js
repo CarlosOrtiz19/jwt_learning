@@ -29,24 +29,18 @@ export default class Login extends Component {
 
     handleSubmit(event) {
     event.preventDefault();
-        LoginService.login(this.state).then(()=>{ 
-            this.props.history.push('/stages');
-            window.location.reload();
-        
-        
-        })
-
-    /*axios.post( 'http://localhost:8080/authenticate',this.state)
-        .then((response) => {    
-          localStorage.removeItem( "user" )       
-          localStorage.setItem( "user", response.data)}).then(this.goHome());  */
+        LoginService.login(this.state).then((this.goHome()))
 
     }
 
     goHome(){
-        if(localStorage.getItem('user')){
+
+        //var user = JSON.parse(localStorage.getItem("user"));
+
+    //console.log(user.token)
+       
             this.props.history.push('/stages');
-        }
+       
     }
 
     login() {

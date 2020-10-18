@@ -10,14 +10,14 @@ class LoginService {
         .then((response) => {  
             if(response.data.token)  {
                 localStorage.removeItem( "user" )       
-                localStorage.setItem( "user", response.data )
+                localStorage.setItem( "user", JSON.stringify(response.data ))
             }
             return response.data;
             });  
     }
 
     logout(){
-        localStorage.removeItem("user")
+       return localStorage.removeItem("user")
     }
 
     getCurrentUser() {

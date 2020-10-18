@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {header} from '../service/headers'
+import authHeader from '../service/headers'
 
 const STAGES_URL = "http://localhost:8080/stages";
 const STAGES_URL_POST = "http://localhost:8080/createStage";
@@ -9,12 +9,13 @@ const STAGES_URL_POST = "http://localhost:8080/createStage";
 class StageService{
 
     //axios
-    getStages(){
-        return axios.get(STAGES_URL, header);
+    async getStages(){
+        return axios.get(STAGES_URL, { headers: authHeader() })
     }
 
     createStage(stage){
-        return axios.post(STAGES_URL_POST, header,stage)
+        return axios.post(STAGES_URL_POST, { headers: authHeader() },stage).then(res => res.json())
+        .catch(error => console.error('Error:', error)) 
     }
 
     //fetch

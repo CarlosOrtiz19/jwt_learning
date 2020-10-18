@@ -10,7 +10,7 @@ import EmployeurRegister from "./components/EmployeurRegister";
 import Login from "./components/Login";
 import { BrowserRouter as Router, Route, Switch, Link, NavLink } from 'react-router-dom';
 import Home from "./components/Home";
-import logout from './components/logout';
+import Logout from './components/Logout';
 
 function App() {
   return (
@@ -23,7 +23,6 @@ function App() {
               <NavLink to="/">Home</NavLink>
               <NavLink to="/empRegist">register</NavLink>
               <NavLink to="/Login">Login</NavLink>
-              <NavLink to="/createStage">create stage</NavLink>
               <NavLink to="/Logout">logout</NavLink>
             </nav>
             <div className="container">
@@ -35,7 +34,7 @@ function App() {
                   <Route path='/empRegist' component={EmployeurRegister} />
                   <Route path='/create' component={EtudiantRegister} />
                   <Route path='/login' component={Login} />
-                  <Route path='/Logout' component={logout} />
+                  <Route path='/Logout' component={Logout} />
                 </Switch>
               </div>
             </div>
