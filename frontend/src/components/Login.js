@@ -29,7 +29,8 @@ export default class Login extends Component {
 
     handleSubmit(event) {
     event.preventDefault();
-        LoginService.login(this.state).then((this.goHome()))
+        LoginService.login(this.state).then(()=>{this.props.history.push('/homeUser');});
+        
 
     }
 
@@ -39,7 +40,7 @@ export default class Login extends Component {
 
     //console.log(user.token)
        
-            this.props.history.push('/stages');
+            this.props.history.push('/homeUser');
        
     }
 

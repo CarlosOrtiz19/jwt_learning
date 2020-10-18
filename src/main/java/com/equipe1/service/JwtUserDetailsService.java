@@ -81,7 +81,7 @@ public class JwtUserDetailsService implements UserDetailsService {
 
                     break;
                 case "company":
-                    Role companyRole = roleRepository.findByRole(ERole.ROLE_STUDENT)
+                    Role companyRole = roleRepository.findByRole(ERole.ROLE_COMPANY)
                             .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
                     roles.add(companyRole);
                     break;
